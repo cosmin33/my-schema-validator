@@ -88,10 +88,4 @@ object Validator {
   def jsonValid(id: SchemaId): Validity = IsValid("validateDocument", id, "success")
   def jsonInvalid(id: SchemaId, message: String): Validity = IsInvalid("validateDocument", id, "error", message)
 
-  def main(args: Array[String]): Unit = {
-    val s = SchemaId("config-schema")
-    println(s.fold("empty")(_.id))
-    println(s"Schema inj: ${injectSchemaToFilename.inj(s.get)}")
-  }
-
 }
