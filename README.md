@@ -10,7 +10,11 @@ Test project for a json schema validator
 4. `sbt run`
 5. `curl http://localhost:8080/schema/config-schema -X POST -d @config-schema.json`
 
-This will add a new schema file in folder "schemas" and will respond with the appropriate json
+This will add a new schema file in folder "schemas" and will respond with the appropriate json.
+The schema files contained there will all have the format 'SCHEMA-<schema-id>' and will contain the json of the said schema.
+
+All schema id's will be restricted to containing letters + numbers + hiphens, all other characters will produce an error from the respective api entry.
+This was done so I can easily implement the file KVStore but should the KVStore be moved to a database one then said restrictions can be lifted
 
 6. `curl http://localhost:8080/schema/config-schema`
 
