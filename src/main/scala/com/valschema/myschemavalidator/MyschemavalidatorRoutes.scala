@@ -9,30 +9,6 @@ import org.http4s.dsl.Http4sDsl
 
 object MyschemavalidatorRoutes {
 
-  def jokeRoutes[F[_]: Sync](J: Jokes[F]): HttpRoutes[F] = {
-    val dsl = new Http4sDsl[F]{}
-    import dsl._
-    HttpRoutes.of[F] {
-      case GET -> Root / "joke" =>
-        for {
-          joke <- J.get
-          resp <- Ok(joke)
-        } yield resp
-    }
-  }
-
-  def helloWorldRoutes[F[_]: Sync](H: HelloWorld[F]): HttpRoutes[F] = {
-    val dsl = new Http4sDsl[F]{}
-    import dsl._
-    HttpRoutes.of[F] {
-      case GET -> Root / "hello" / name =>
-        for {
-          greeting <- H.hello(HelloWorld.Name(name))
-          resp <- Ok(greeting)
-        } yield resp
-    }
-  }
-
   def validatorRoutes[F[_]: Sync](validator: Validator[F]): HttpRoutes[F] = {
     val dsl = new Http4sDsl[F]{}
     import dsl._
@@ -63,14 +39,6 @@ object MyschemavalidatorRoutes {
             schemaId => j.fold(_ => NotAcceptable("Invalid Json"), json => Ok(validator.validateJson(schemaId, json)))
           )
         } yield resp
-
-
-//      case req @ POST -> Root / "validate" / SchemaId(schemaId) =>
-//        for {
-//          body <- req.body.map(_.toChar).compile.toList.map(_.mkString)
-//          j = parse(body)
-//          resp <- j.fold(_ => NotAcceptable("Invalid Json"), json => Ok(validator.validateJson(schemaId, json)))
-//        } yield resp
     }
   }
 

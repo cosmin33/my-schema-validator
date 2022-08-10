@@ -5,7 +5,6 @@ import cats.effect.{Async, Resource, Sync}
 import cats.syntax.all._
 import com.comcast.ip4s._
 import fs2.Stream
-import org.http4s.ember.client.EmberClientBuilder
 import org.http4s.ember.server.EmberServerBuilder
 import org.http4s.implicits._
 import org.http4s.server.middleware.Logger
@@ -35,19 +34,7 @@ object MyschemavalidatorServer {
       _ <- Stream.eval(createFolderOrNop(schemasFolder))
       kvs <- Stream.eval(createKVStore(schemasFolder))
       validator <- Stream.emit(Validator(kvs))
-      client <- Stream.resource(EmberClientBuilder.default[F].build)
-      helloWorldAlg = HelloWorld.impl[F]
-      jokeAlg = Jokes.impl[F](client)
-
-      // Combine Service Routes into an HttpApp.
-      // Can also be done via a Router if you
-      // want to extract segments not checked
-      // in the underlying routes.
-      httpApp = (
-        MyschemavalidatorRoutes.helloWorldRoutes[F](helloWorldAlg) <+>
-        MyschemavalidatorRoutes.jokeRoutes[F](jokeAlg) <+>
-          MyschemavalidatorRoutes.validatorRoutes[F](validator)
-      ).orNotFound
+      httpApp = MyschemavalidatorRoutes.validatorRoutes[F](validator).orNotFound
 
       // With Middlewares in place
       finalHttpApp = Logger.httpApp(true, true)(httpApp)
