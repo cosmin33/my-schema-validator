@@ -1,0 +1,28 @@
+[0m[[0m[31merror[0m] [0m[0m/home/cosmo/devel/stuff/play/my-schema-validator/src/main/scala/com/valschema/myschemavalidator/MyschemavalidatorRoutes.scala:7:17: Unused import[0m
+[0m[[0m[31merror[0m] [0m[0mimport io.circe.Json[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/cosmo/devel/stuff/play/my-schema-validator/src/main/scala/com/valschema/myschemavalidator/MyschemavalidatorRoutes.scala:9:25: Unused import[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.http4s.circe._[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/cosmo/devel/stuff/play/my-schema-validator/src/main/scala/com/valschema/myschemavalidator/Validator.scala:15:16: reference to parse is ambiguous;[0m
+[0m[[0m[31merror[0m] [0m[0mit is imported twice in the same scope by[0m
+[0m[[0m[31merror[0m] [0m[0mimport io.circe.parser._[0m
+[0m[[0m[31merror[0m] [0m[0mand import cats._[0m
+[0m[[0m[31merror[0m] [0m[0m    val json = parse(content)[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/cosmo/devel/stuff/play/my-schema-validator/src/main/scala/com/valschema/myschemavalidator/Validator.scala:4:23: Unused import[0m
+[0m[[0m[31merror[0m] [0m[0mimport cats.implicits._[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/cosmo/devel/stuff/play/my-schema-validator/src/main/scala/com/valschema/myschemavalidator/Validator.scala:5:71: Unused import[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.valschema.myschemavalidator.Validator.{SchemaId, Validity, schemaInvalid, schemaValid}[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/cosmo/devel/stuff/play/my-schema-validator/src/main/scala/com/valschema/myschemavalidator/Validator.scala:5:86: Unused import[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.valschema.myschemavalidator.Validator.{SchemaId, Validity, schemaInvalid, schemaValid}[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/cosmo/devel/stuff/play/my-schema-validator/src/main/scala/com/valschema/myschemavalidator/Validator.scala:14:17: parameter value id in method addSchema is never used[0m
+[0m[[0m[31merror[0m] [0m[0m  def addSchema(id: SchemaId, content: String)(implicit F: Monad[F]): F[Validity] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/cosmo/devel/stuff/play/my-schema-validator/src/main/scala/com/valschema/myschemavalidator/Validator.scala:14:57: parameter value F in method addSchema is never used[0m
+[0m[[0m[31merror[0m] [0m[0m  def addSchema(id: SchemaId, content: String)(implicit F: Monad[F]): F[Validity] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m8 errors found[0m

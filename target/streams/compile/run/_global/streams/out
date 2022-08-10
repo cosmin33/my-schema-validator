@@ -1,0 +1,23 @@
+[0m[[0m[31merror[0m] [0m[0mjava.net.BindException: Address already in use[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.nio.ch.Net.bind0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.nio.ch.Net.bind(Net.java:461)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.nio.ch.Net.bind(Net.java:453)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.nio.ch.AsynchronousServerSocketChannelImpl.bind(AsynchronousServerSocketChannelImpl.java:163)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.nio.channels.AsynchronousServerSocketChannel.bind(AsynchronousServerSocketChannel.java:193)[0m
+[0m[[0m[31merror[0m] [0m[0m	at fs2.io.net.SocketGroupCompanionPlatform$AsyncSocketGroup.$anonfun$serverResource$3(SocketGroupPlatform.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at delay @ fs2.io.net.SocketGroupCompanionPlatform$AsyncSocketGroup.$anonfun$serverResource$2(SocketGroupPlatform.scala:85)[0m
+[0m[[0m[31merror[0m] [0m[0m	at traverse @ fs2.io.net.SocketGroupCompanionPlatform$AsyncSocketGroup.serverResource(SocketGroupPlatform.scala:84)[0m
+[0m[[0m[31merror[0m] [0m[0m	at flatMap @ fs2.io.net.SocketGroupCompanionPlatform$AsyncSocketGroup.serverResource(SocketGroupPlatform.scala:84)[0m
+[0m[[0m[31merror[0m] [0m[0m	at make @ org.typelevel.keypool.KeyPool$Builder.build(KeyPool.scala:341)[0m
+[0m[[0m[31merror[0m] [0m[0m	at make @ org.typelevel.keypool.KeyPool$Builder.build(KeyPool.scala:341)[0m
+[0m[[0m[31merror[0m] [0m[0m	at uncancelable @ fs2.Pull$.acquireCancelable(Pull.scala:389)[0m
+[0m[[0m[31merror[0m] [0m[0m	at flatMap @ fs2.Compiler$Target.flatMap(Compiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0m	at handleErrorWith @ fs2.Compiler$Target.handleErrorWith(Compiler.scala:161)[0m
+[0m[[0m[31merror[0m] [0m[0m	at flatMap @ fs2.Compiler$Target.flatMap(Compiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0m	at uncancelable @ fs2.Compiler$Target.uncancelable(Compiler.scala:165)[0m
+[0m[[0m[31merror[0m] [0m[0m	at unique @ fs2.Compiler$Target$ConcurrentTarget.unique(Compiler.scala:194)[0m
+[0m[[0m[31merror[0m] [0m[0m	at flatMap @ fs2.Compiler$Target.flatMap(Compiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0m	at ref @ fs2.Compiler$Target$ConcurrentTarget.ref(Compiler.scala:195)[0m
+[0m[[0m[31merror[0m] [0m[0m	at flatMap @ fs2.Compiler$Target.flatMap(Compiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0m	at flatMap @ fs2.Compiler$Target.flatMap(Compiler.scala:163)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) java.net.BindException: Address already in use[0m
